@@ -19,8 +19,16 @@ class Activity {
 
     //Second method
 
-    val keyboard = DaggerNewComponent.create().getKeyboard()
-    val mouse = DaggerNewComponent.create().getMouse()
-    val monitor = DaggerNewComponent.create().getMonitor()
-    val computer = DaggerNewComponent.create().getComputer()
+//    val keyboard = DaggerNewComponent.create().getKeyboard()
+//    val mouse = DaggerNewComponent.create().getMouse()
+//    val monitor = DaggerNewComponent.create().getMonitor()
+//    val computer = DaggerNewComponent.create().getComputer()
+
+    //WithModule
+    @Inject
+    lateinit var computer: Computer
+    init {
+        DaggerNewComponent.create().inject(this)
+    }
+
 }
