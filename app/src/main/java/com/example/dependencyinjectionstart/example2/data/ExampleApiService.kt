@@ -4,11 +4,19 @@ import android.app.Application
 import android.util.Log
 import com.example.dependencyinjectionstart.R
 import javax.inject.Inject
+import javax.inject.Singleton
 
-class ExampleApiService @Inject constructor(private val context: Application) {
+@Singleton
+class ExampleApiService @Inject constructor(
+    private val context: Application,
+    private val timeMillis: Long
+) {
 
     fun method() {
-        Log.d(LOG_TAG, "ExampleApiService ${context.resources.getString(R.string.app_name)}")
+        Log.d(
+            LOG_TAG,
+            "ExampleApiService ${context.resources.getString(R.string.app_name)} time: $timeMillis $this"
+        )
     }
 
     companion object {
