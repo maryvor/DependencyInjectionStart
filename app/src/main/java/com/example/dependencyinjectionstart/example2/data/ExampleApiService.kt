@@ -4,9 +4,7 @@ import android.app.Application
 import android.util.Log
 import com.example.dependencyinjectionstart.R
 import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
 class ExampleApiService @Inject constructor(
     private val context: Application,
     private val timeMillis: Long
